@@ -25,6 +25,14 @@ This is a set of tutorials for the CMS Data Analysis School (CMSDAS) Statistics 
 2. Start a new server with the "Combine / Python 3.10 / ROOT 6.26.4" image.
 
 You're all set!
+For any notebooks that use `combine` or `text2workspace.py` you may encounter "command not found" error. If so, add the following lines to a new cell in your notebook and run it:
+```python
+import os
+
+os.environ["PATH"] = os.environ["PATH"] + ":/tmp/HiggsAnalysis/CombinedLimit/build/bin"
+os.environ["LD_LIBRARY_PATH"] = os.environ["LD_LIBRARY_PATH"] + ":/tmp/HiggsAnalysis/CombinedLimit/build/lib"
+os.environ["PYTHONPATH"] = "/tmp/HiggsAnalysis/CombinedLimit/build/lib/python"
+```
 
 ## Getting Started on [Swan](http://swan.web.cern.ch/)
 
